@@ -10,6 +10,8 @@ group :production do
     gem 'pg'
     gem 'rails_12factor'
 end
+# Use font-awesome
+gem 'font-awesome-sass'
 # Use bootstrap
 gem 'bootstrap-sass', '3.3.1'
 # Use SCSS for stylesheets
