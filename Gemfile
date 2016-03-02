@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
+# Use devise for user authentication
+gem 'devise', '3.4.1'
 # Use postgresql for production
 group :production do
     gem 'pg'
