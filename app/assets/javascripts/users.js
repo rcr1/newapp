@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // Grabs stripe key meta tag from the header of the page
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
   // Watch for a form submission:
   $("#form-submit-btn").click(function(event) {
@@ -24,6 +25,7 @@ $(document).ready(function() {
     return false;
   });// form submission
   
+  // after status and response objects returned from stripe, this function uses those variables to continue
   function stripeResponseHandler(status, response) {
     // Get a reference to the form:
     var f = $("#new_user");
