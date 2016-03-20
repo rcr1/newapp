@@ -6,9 +6,14 @@
   
   Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
+  #creates nested resources so URL will say users/profile
+  resources :users do
+    resource :profile
+  end
   resources :contacts
   get '/about' => 'pages#about'
   root 'pages#home'
+ 
 
   
   # The priority is based upon order of creation: first created -> highest priority.
