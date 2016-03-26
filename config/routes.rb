@@ -8,6 +8,7 @@
   devise_for :users, controllers: { registrations: 'users/registrations' }
   #creates nested resources so URL will say users/profile
   resources :users do
+    # profile is singular because each user only has one profile in the database relationship
     resource :profile
   end
   resources :contacts
