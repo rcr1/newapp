@@ -1,0 +1,8 @@
+<h2>Dev Match Users</h2>
+<p>Click a user to view their profile.</p>
+
+<% @users.each do |user| %>
+    <% if user.profile.first_name %>
+        <%= link_to user.profile.first_name, user_path(user) %>
+    <% end %>
+<% end %>
