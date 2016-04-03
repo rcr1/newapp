@@ -1,0 +1,40 @@
+ <div class="field form-group">
+  <!-- form_for creates new profile object for user. url: user_profile_path tells the form to send to the create action for this user in rake routes-->
+   <!--If users could have more than one profile, we wouldn't need to include url: user_profile_path, but since the profile is singular, we do-->
+    <%= form_for @profile, url: user_profile_path do |f| %>
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :job_title %>
+        <!--the {} is for other options which we won't need, but still include in the syntax-->
+        <%= f.select :job_title, ['Developer','Entrepreneur', 'Investor'], {},  class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :contact_email %>
+        <%= f.text_field :contact_email, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+</div>

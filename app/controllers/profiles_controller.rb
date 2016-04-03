@@ -20,12 +20,24 @@ class ProfilesController < ApplicationController
   end
     
   
+  def edit
+    @profile = current_user.profile
+  end
+  
+  def update
+    @profile  = current_user.profile
+    if @profile.update(profile_params) 
+      flash[:success] = 'Profile saved!'
+      redirect_to user_path( params[:user_id] )
+    else
+      flash[:danger] = 'Error. Profile has not been updated.'
+      render action: :edit
+    end
+  end
   
   private
     # :profile tells Rails which object can be saved to the database 
     def profile_params
       params.require(:profile).permit(:first_name, :last_name, :job_title, :phone_number, :contact_email, :description)
     end
-      
-
 end

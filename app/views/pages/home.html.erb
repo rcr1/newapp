@@ -17,6 +17,7 @@
             <%= link_to "View your profile", user_path(current_user), class: 'btn btn-primary btn-block btn-lg' %><br/>
             <%= link_to "Edit your profile", edit_user_profile_path(current_user), class: 'btn btn-primary btn-block btn-lg' %>
           <% else %>
+            <p>Create your profile to begin interacting with the Dev Match community.</p>
             <%= link_to "Create your profile", new_user_profile_path(current_user), class: 'btn btn-primary btn-block btn-lg' %>
           <% end %>
         </div>
