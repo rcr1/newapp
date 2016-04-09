@@ -42,7 +42,7 @@ class ProfilesController < ApplicationController
   private
     # :profile tells Rails which object can be saved to the database 
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :job_title, :phone_number, :contact_email, :description)
+      params.require(:profile).permit(:avatar, :first_name, :last_name, :job_title, :phone_number, :contact_email, :description)
     end
     
     def only_current_user
