@@ -1,15 +1,23 @@
 <h2>Profile Information</h2>
 
-<%= @user.profile.first_name %> <br/>
-<%= @user.profile.last_name %> <br/>
-<%= image_tag @user.profile.avatar.url %>
-<%= @user.profile.job_title %> <br/>
-<%= @user.profile.description %> <br/>
-
-<% if current_user.plan_id == 2 %>
-    <%= @user.profile.phone_number %> <br/>
-    <%= @user.profile.contact_email %>
-<% else %>
-    <br/>
-    <div class='danger'>Upgrade to the pro account to see user details!</div>
-<% end%>
+<div class="row">
+  <div class="col-md-2 text-center">
+    <%= image_tag @user.profile.avatar.url(:medium), class: "avatar-show" %>
+  </div>
+  
+  <div class="col-md-7">
+    <h3><%= @user.profile.first_name %> <%= @user.profile.last_name %>  <span class="job_title_icon"><%= job_title_icon %></span></h3>
+    
+    
+    <strong>Job Title: </strong><%= @user.profile.job_title %> </br>
+    <strong>Description: </strong><span class="profile_description"><%= @user.profile.description %></span></br>
+    
+    <% if current_user.plan_id == 2 %>
+      <strong>Phone Number: </strong><%= @user.profile.phone_number %></br>
+      <strong>Contact Email:</strong> <%= @user.profile.contact_email %>
+    <% else %>
+      </br>
+      <div class='danger'>Upgrade to the <%= link_to 'pro account', "#", class: "text-primary" %> to see user details!</div>
+    <% end%>
+  </div>
+</div>
