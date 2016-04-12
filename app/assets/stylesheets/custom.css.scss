@@ -51,15 +51,11 @@
     text-align: center;
 }
 
-.profile_description {
-    width: 300px;
+.well.gray-bg {
+    background-color: gray;
 }
 
 .avatar-show {
-    
-    border-radius: 50%;
-    -webkit-box-shadow: 3px 3px 11px 6px rgba(15,14,15,1);
-    -moz-box-shadow: 3px 3px 11px 6px rgba(15,14,15,1);
-    box-shadow: 3px 3px 11px 6px rgba(15,14,15,1);
-    
+    height: 128px;
+    width: 128px;
 }

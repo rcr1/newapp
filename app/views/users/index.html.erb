@@ -1,8 +1,25 @@
 <h2>Dev Match Users</h2>
 <p>Click a user to view their profile.</p>
 
-<% @users.each do |user| %>
-    <% if user.profile.first_name %>
-        <%= link_to user.profile.first_name, user_path(user) %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <% @users.each do |user| %>
+        <% if user.profile and user.profile.first_name %>
+          <%= link_to user do %>
+            <div class="well row <%= cycle('gray-bg', '') %>" >
+                <div class="col-sm-4 text-center">
+                  <% if user.profile.avatar %>
+                      <%= image_tag user.profile.avatar.url(:thumb) %>
+                  <% else %>
+                    <%= image_tag :default_url %></div>
+                  <% end %>
+                </div>
+                <div class="col-sm-8">
+                  <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
+                </div>
+            </div>
+          <% end %>
+        <% end %>
     <% end %>
-<% end %>
+  </div>
+</div>
