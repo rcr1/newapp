@@ -1,8 +1,9 @@
-<h2>Dev Match Users</h2>
-<p>Click a user to view their profile.</p>
+
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
+    <h2>Dev Match Users</h2>
+    <p>Click a user to view their profile.</p>
     <% @users.each do |user| %>
         <% if user.profile and user.profile.first_name %>
           <%= link_to user do %>
